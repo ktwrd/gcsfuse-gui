@@ -1,0 +1,61 @@
+{
+	"name": "gcsfuse-gui",
+	"productName": "GCSFUSEGUI",
+	"version": "1.0.0",
+	"description": "Graphical User Interface written with Electron for Google Cloud Storage FUSE",
+	"main": "src/electron.js",
+	"scripts": {
+		"start": "electron-forge start",
+		"package": "electron-forge package",
+		"make": "electron-forge make",
+		"publish": "electron-forge publish",
+		"lint": "echo \"No linting configured\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://git.dariox.club/root/gcsfuse-gui"
+	},
+	"author": "Jyles Coad-Ward (jyles@dariox.club)",
+	"license": "LGPL-3.0",
+	"config": {
+		"forge": {
+			"packagerConfig": {},
+			"makers": [
+				{
+					"name": "@electron-forge/maker-squirrel",
+					"config": {
+						"name": "electron_app"
+					}
+				},
+				{
+					"name": "@electron-forge/maker-zip",
+					"platforms": [
+						"darwin"
+					]
+				},
+				{
+					"name": "@electron-forge/maker-deb",
+					"config": {}
+				},
+				{
+					"name": "@electron-forge/maker-rpm",
+					"config": {}
+				}
+			]
+		}
+	},
+	"dependencies": {
+		"electron-squirrel-startup": "^1.0.0",
+		"jquery": "^3.5.1",
+		"swig": "^1.4.2",
+		"tinytoolbox": "0.0.5"
+	},
+	"devDependencies": {
+		"@electron-forge/cli": "^6.0.0-beta.54",
+		"@electron-forge/maker-deb": "^6.0.0-beta.54",
+		"@electron-forge/maker-rpm": "^6.0.0-beta.54",
+		"@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+		"@electron-forge/maker-zip": "^6.0.0-beta.54",
+		"electron": "11.2.3"
+	}
+}
